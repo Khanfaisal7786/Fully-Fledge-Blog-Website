@@ -23,7 +23,7 @@ Make sure you have the following installed:
 ### Installation
 1. Clone the repository.
    ```bash
-   git clone https://github.com/your-username/blog-website.git
+   git clone https://github.com/Khanfaisal7786/Fully-Fledge-Blog-Website.git
    ```
 
 2. Change into the project directory.
