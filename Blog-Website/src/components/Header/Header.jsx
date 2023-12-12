@@ -24,10 +24,15 @@ function Header() {
       slug: "/signup",
       active: !authStatus,
   },
+  // {
+  //     name: "All Posts",
+  //     slug: "/all-posts",
+  //     active: authStatus,
+  // },
   {
-      name: "All Posts",
-      slug: "/all-posts",
-      active: authStatus,
+    name: "My Posts",
+    slug: "/my-posts",
+    active: authStatus,
   },
   {
       name: "Add Post",
@@ -38,25 +43,27 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-2 shadow bg-black'>
       <Container>
-        <nav className='flex'>
+        <nav className='flex flex-wrap items-center'>
           <div className='mr-4'>
             <Link to='/'>
-              <Logo width='70px'   />
-
-              </Link>
+              <Logo width='120px' />
+            </Link>
           </div>
-          <ul className='flex ml-auto'>
-            {navItems.map((item) => 
-            item.active ? (
-              <li key={item.name}>
-                <button
-                onClick={() => navigate(item.slug)}
-                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-                >{item.name}</button>
-              </li>
-            ) : null
+          <ul className='flex ml-auto items-center text-white'>
+            {navItems.map(
+              (item) =>
+                item.active && (
+                  <li key={item.name}>
+                    <button
+                      onClick={() => navigate(item.slug)}
+                      className='inline-block px-6 py-2 duration-200 bg-gradient-to-r hover:from-yellow-500 hover:to-pink-500 rounded-full'
+                    >
+                      {item.name}
+                    </button>
+                  </li>
+                )
             )}
             {authStatus && (
               <li>
@@ -65,9 +72,9 @@ function Header() {
             )}
           </ul>
         </nav>
-        </Container>
+      </Container>
     </header>
-  )
+  );
 }
 
 export default Header
