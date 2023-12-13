@@ -38,9 +38,7 @@ function App() {
         </div>
       </div>
     </div>
-  ) : (
-    <h1>Add Loading states ....</h1>
-  );
+  ) : null
 }
 
 export default App;
